@@ -70,6 +70,7 @@
 		4FEF5AD31B29E011002344A7 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF5A171B29DF9C002344A7 /* lzio.c */; };
 		4FEF5AD41B29E011002344A7 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A181B29DF9C002344A7 /* lzio.h */; };
 		4FEF5AD51B29E017002344A7 /* liblua.a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEF5A981B29E005002344A7 /* liblua.a.a */; };
+		4FEF5AD61B2A11DE002344A7 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF59701B29D0FB002344A7 /* Skin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEF5AD61B2A11DE002344A7 /* Skin.m in Sources */,
 				4FEF59621B29CE06002344A7 /* LuaSkinTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,12 +735,20 @@
 		4FEF5A9A1B29E006002344A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"-DLUA_COMPAT_ALL",
+					"-DLUA_USE_MACOSX",
+				);
+				OTHER_LDFLAGS = "-lreadline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -746,7 +756,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"-DLUA_COMPAT_ALL",
+					"-DLUA_USE_MACOSX",
+				);
+				OTHER_LDFLAGS = "-lreadline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -769,6 +786,7 @@
 				4FEF59671B29CE06002344A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FEF59681B29CE06002344A7 /* Build configuration list for PBXNativeTarget "LuaSkinTests" */ = {
 			isa = XCConfigurationList;
@@ -777,6 +795,7 @@
 				4FEF596A1B29CE06002344A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FEF5A991B29E006002344A7 /* Build configuration list for PBXNativeTarget "lua.a" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +804,7 @@
 				4FEF5A9B1B29E006002344A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
