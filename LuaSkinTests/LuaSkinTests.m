@@ -44,6 +44,30 @@
     XCTAssert((skin.L == NULL));
 }
 
+- (void)testLuaCanExecute {
+    int result = luaL_dostring(skin.L, "print('Lua executes')");
+    XCTAssertFalse(result);
+}
+
+- (void)testLuaCanFailToExecute {
+    int result = luaL_dostring(skin.L, "invalid mumbojumbo");
+    XCTAssertTrue(result);
+}
+
+- (void)testProtectedCall {
+    int loadResult = luaL_loadstring(skin.L, "print('Lua protected execution works')");
+    XCTAssertFalse(loadResult);
+    BOOL pcallResult = [skin protectedCallAndTraceback:0 nresults:0];
+    XCTAssertTrue(pcallResult);
+}
+
+- (void)testProtectedCallWithFailure {
+    int loadResult = luaL_loadstring(skin.L, "require('impossible_module')");
+    XCTAssertFalse(loadResult);
+    BOOL pcallResult = [skin protectedCallAndTraceback:0 nresults:0];
+    XCTAssertFalse(pcallResult);
+}
+
 - (void)testPerformanceLuaStateLifecycle {
     [self measureBlock:^{
         [skin destroyLuaState];
