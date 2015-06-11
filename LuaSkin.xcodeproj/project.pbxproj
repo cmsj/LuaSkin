@@ -33,6 +33,7 @@
 		4FEF59611B29CE06002344A7 /* LuaSkinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuaSkinTests.m; sourceTree = "<group>"; };
 		4FEF596F1B29D0FB002344A7 /* Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skin.h; sourceTree = "<group>"; };
 		4FEF59701B29D0FB002344A7 /* Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skin.m; sourceTree = "<group>"; };
+		4FEF59DC1B29DA2A002344A7 /* src.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = src.xcodeproj; path = "lua-5.2.4/src/src.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		4FEF59451B29CE06002344A7 = {
 			isa = PBXGroup;
 			children = (
+				4FEF59951B29DA0B002344A7 /* lua-5.2.4 */,
 				4FEF59511B29CE06002344A7 /* LuaSkin */,
 				4FEF595E1B29CE06002344A7 /* LuaSkinTests */,
 				4FEF59501B29CE06002344A7 /* Products */,
@@ -106,6 +108,21 @@
 				4FEF59601B29CE06002344A7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FEF59951B29DA0B002344A7 /* lua-5.2.4 */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF59DC1B29DA2A002344A7 /* src.xcodeproj */,
+			);
+			name = "lua-5.2.4";
+			sourceTree = "<group>";
+		};
+		4FEF59DD1B29DA2A002344A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +203,12 @@
 			mainGroup = 4FEF59451B29CE06002344A7;
 			productRefGroup = 4FEF59501B29CE06002344A7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4FEF59DD1B29DA2A002344A7 /* Products */;
+					ProjectRef = 4FEF59DC1B29DA2A002344A7 /* src.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4FEF594E1B29CE06002344A7 /* LuaSkin */,
