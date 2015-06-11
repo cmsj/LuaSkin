@@ -20,14 +20,11 @@
 
 - (void)setUp {
     [super setUp];
-
-    skin = [Skin shared];
-    [skin createLuaState];
+    skin = [[Skin alloc] init];
 }
 
 - (void)tearDown {
     [skin destroyLuaState];
-    
     [super tearDown];
 }
 
@@ -35,13 +32,41 @@
     XCTAssertNotNil(skin);
 }
 
+- (void)testSingletonality {
+    XCTAssertEqual([Skin shared], [Skin shared]);
+}
+
 - (void)testLuaStateCreation {
     XCTAssert((skin.L != NULL));
+}
+
+- (void)testLuaStateDoubleCreation {
+    XCTAssertThrowsSpecificNamed([skin createLuaState], NSException, NSInternalInconsistencyException);
 }
 
 - (void)testLuaStateDestruction {
     [skin destroyLuaState];
     XCTAssert((skin.L == NULL));
+    // Put the Lua environment back so tearDown doesn't explode
+    [skin createLuaState];
+}
+
+- (void)testLuaStateDoubleDestruction {
+    [skin destroyLuaState];
+    
+    @try {
+        // This should throw an NSInternalInconsistencyException
+        [skin destroyLuaState];
+    }
+    @catch (NSException *exception) {
+        if (exception.name != NSInternalInconsistencyException) {
+            XCTFail(@"Double Destruction raised the wrong kind of exception: %@", exception.name);
+        }
+    }
+    @finally {
+        // Put the Lua environment back so teatDown doesn't explode
+        [skin createLuaState];
+    }
 }
 
 - (void)testLuaCanExecute {

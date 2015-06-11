@@ -23,7 +23,7 @@
 + (id)shared;
 
 /** Prepares the Lua environment in the LuaSkin object
- @note This must be called once after accessing the shared LuaSkin object for the first time
+ @note This method should only ever be called after an explicit call to destroyLuaState. The class initialisation creats a Lua environment.
  */
 - (void)createLuaState;
 

@@ -28,6 +28,7 @@
 - (id)init {
     self = [super init];
     if (self) {
+        _L = NULL;
         [self createLuaState];
     }
     return self;
@@ -36,11 +37,13 @@
 #pragma mark - lua_State lifecycle
 
 - (void)createLuaState {
+    NSAssert((_L == NULL), @"createLuaState called on a live Lua environment");
     _L = luaL_newstate();
     luaL_openlibs(_L);
 }
 
 - (void)destroyLuaState {
+    NSAssert((_L != NULL), @"destroyLuaState called with no Lua environment");
     if (_L) {
         lua_close(_L);
     }
