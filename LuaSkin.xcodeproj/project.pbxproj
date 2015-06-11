@@ -10,7 +10,7 @@
 		4FEF59551B29CE06002344A7 /* LuaSkin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF59541B29CE06002344A7 /* LuaSkin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF595B1B29CE06002344A7 /* LuaSkin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEF594F1B29CE06002344A7 /* LuaSkin.framework */; };
 		4FEF59621B29CE06002344A7 /* LuaSkinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF59611B29CE06002344A7 /* LuaSkinTests.m */; };
-		4FEF59711B29D0FB002344A7 /* Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF596F1B29D0FB002344A7 /* Skin.h */; };
+		4FEF59711B29D0FB002344A7 /* Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF596F1B29D0FB002344A7 /* Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF59721B29D0FB002344A7 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF59701B29D0FB002344A7 /* Skin.m */; };
 		4FEF5A9C1B29E011002344A7 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF59E01B29DF9B002344A7 /* lapi.c */; };
 		4FEF5A9D1B29E011002344A7 /* lapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF59E11B29DF9B002344A7 /* lapi.h */; };
@@ -69,7 +69,7 @@
 		4FEF5AD21B29E011002344A7 /* lvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A161B29DF9C002344A7 /* lvm.h */; };
 		4FEF5AD31B29E011002344A7 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF5A171B29DF9C002344A7 /* lzio.c */; };
 		4FEF5AD41B29E011002344A7 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A181B29DF9C002344A7 /* lzio.h */; };
-		4FEF5AD51B29E017002344A7 /* liblua.a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEF5A981B29E005002344A7 /* liblua.a.a */; };
+		4FEF5AD51B29E017002344A7 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEF5A981B29E005002344A7 /* liblua.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,7 +148,7 @@
 		4FEF5A161B29DF9C002344A7 /* lvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lvm.h; path = "lua-5.2.4/src/lvm.h"; sourceTree = "<group>"; };
 		4FEF5A171B29DF9C002344A7 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lzio.c; path = "lua-5.2.4/src/lzio.c"; sourceTree = "<group>"; };
 		4FEF5A181B29DF9C002344A7 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lzio.h; path = "lua-5.2.4/src/lzio.h"; sourceTree = "<group>"; };
-		4FEF5A981B29E005002344A7 /* liblua.a.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblua.a.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FEF5A981B29E005002344A7 /* liblua.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblua.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FEF5AD51B29E017002344A7 /* liblua.a.a in Frameworks */,
+				4FEF5AD51B29E017002344A7 /* liblua.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +193,7 @@
 			children = (
 				4FEF594F1B29CE06002344A7 /* LuaSkin.framework */,
 				4FEF595A1B29CE06002344A7 /* LuaSkinTests.xctest */,
-				4FEF5A981B29E005002344A7 /* liblua.a.a */,
+				4FEF5A981B29E005002344A7 /* liblua.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,9 +381,9 @@
 			productReference = 4FEF595A1B29CE06002344A7 /* LuaSkinTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4FEF5A971B29E005002344A7 /* lua.a */ = {
+		4FEF5A971B29E005002344A7 /* lua */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FEF5A991B29E006002344A7 /* Build configuration list for PBXNativeTarget "lua.a" */;
+			buildConfigurationList = 4FEF5A991B29E006002344A7 /* Build configuration list for PBXNativeTarget "lua" */;
 			buildPhases = (
 				4FEF5A941B29E005002344A7 /* Sources */,
 				4FEF5A951B29E005002344A7 /* Frameworks */,
@@ -393,9 +393,9 @@
 			);
 			dependencies = (
 			);
-			name = lua.a;
+			name = lua;
 			productName = lua.a;
-			productReference = 4FEF5A981B29E005002344A7 /* liblua.a.a */;
+			productReference = 4FEF5A981B29E005002344A7 /* liblua.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -432,7 +432,7 @@
 			targets = (
 				4FEF594E1B29CE06002344A7 /* LuaSkin */,
 				4FEF59591B29CE06002344A7 /* LuaSkinTests */,
-				4FEF5A971B29E005002344A7 /* lua.a */,
+				4FEF5A971B29E005002344A7 /* lua */,
 			);
 		};
 /* End PBXProject section */
@@ -795,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FEF5A991B29E006002344A7 /* Build configuration list for PBXNativeTarget "lua.a" */ = {
+		4FEF5A991B29E006002344A7 /* Build configuration list for PBXNativeTarget "lua" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FEF5A9A1B29E006002344A7 /* Debug */,
