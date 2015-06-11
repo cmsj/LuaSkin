@@ -89,7 +89,6 @@
 		4FEF5AFF1B2A2884002344A7 /* ltable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A0B1B29DF9B002344A7 /* ltable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF5B001B2A2884002344A7 /* ltm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A0E1B29DF9B002344A7 /* ltm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF5B011B2A2884002344A7 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A0F1B29DF9C002344A7 /* lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FEF5B021B2A2884002344A7 /* lua.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A101B29DF9C002344A7 /* lua.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF5B031B2A2884002344A7 /* luaconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A111B29DF9C002344A7 /* luaconf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF5B041B2A2884002344A7 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A121B29DF9C002344A7 /* lualib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF5B051B2A2884002344A7 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF5A141B29DF9C002344A7 /* lundump.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -340,7 +339,6 @@
 				4FEF5AFE1B2A2884002344A7 /* lstring.h in Headers */,
 				4FEF5AF71B2A2884002344A7 /* llex.h in Headers */,
 				4FEF5B041B2A2884002344A7 /* lualib.h in Headers */,
-				4FEF5B021B2A2884002344A7 /* lua.hpp in Headers */,
 				4FEF5AFA1B2A2884002344A7 /* lobject.h in Headers */,
 				4FEF5AF01B2A2884002344A7 /* lauxlib.h in Headers */,
 				4FEF5AF41B2A2884002344A7 /* ldo.h in Headers */,
