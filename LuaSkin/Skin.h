@@ -16,7 +16,6 @@
 }
 
 @property (atomic, readonly) lua_State *L;
-@property (atomic) int evalFn;
 
 - (void)createLuaState;
 - (void)destroyLuaState;

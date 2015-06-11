@@ -13,7 +13,6 @@
 #pragma mark - Skin Properties
 
 @synthesize L = _L;
-@synthesize evalFn;
 
 #pragma mark - Class lifecycle
 
