@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "lauxlib.h"
+#import "lua.h"
 
-@interface Skin : NSObject
+@interface Skin : NSObject {
+    lua_State *L;
+}
 
 @end
