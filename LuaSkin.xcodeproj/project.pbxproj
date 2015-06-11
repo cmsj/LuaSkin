@@ -112,9 +112,9 @@
 		4FEF59541B29CE06002344A7 /* LuaSkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuaSkin.h; sourceTree = "<group>"; };
 		4FEF595A1B29CE06002344A7 /* LuaSkinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuaSkinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEF59601B29CE06002344A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FEF59611B29CE06002344A7 /* LuaSkinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuaSkinTests.m; sourceTree = "<group>"; };
-		4FEF596F1B29D0FB002344A7 /* Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skin.h; sourceTree = "<group>"; };
-		4FEF59701B29D0FB002344A7 /* Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skin.m; sourceTree = "<group>"; };
+		4FEF59611B29CE06002344A7 /* LuaSkinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LuaSkinTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4FEF596F1B29D0FB002344A7 /* Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Skin.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4FEF59701B29D0FB002344A7 /* Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Skin.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4FEF59E01B29DF9B002344A7 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lapi.c; path = "lua-5.2.4/src/lapi.c"; sourceTree = "<group>"; };
 		4FEF59E11B29DF9B002344A7 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lapi.h; path = "lua-5.2.4/src/lapi.h"; sourceTree = "<group>"; };
 		4FEF59E21B29DF9B002344A7 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lauxlib.c; path = "lua-5.2.4/src/lauxlib.c"; sourceTree = "<group>"; };

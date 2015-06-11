@@ -54,4 +54,54 @@
  */
 - (BOOL)protectedCallAndTraceback:(int)nargs nresults:(int)nresults;
 
+/** Defines a Lua library
+ @code
+ static const luaL_Reg myShinyLibrary[] = {
+ {"doThing", function_doThing},
+ {NULL, NULL} // Library arrays must always end with this
+ }
+ static const luaL_Reg myShinyMetaLibrary[] = {
+ {"__gc", function_doLibraryCleanup},
+ {NULL, NULL} // Library arrays must always end with this
+ }
+ [luaSkin registerLibrary:myShinyLibrary metaFunctions:myShinyMetaLibrary];
+ @endcode
+ 
+ @note Every C function pointer must point to a function of the form: static int someFunction(lua_State *L);
+ 
+ @param functions - A static array of mappings between Lua function names and C function pointers. This provides the public API of the Lua library
+ @param metaFunctions - A static array of mappings between special meta Lua function names (such as "__gc") and C function pointers.
+ */
+- (void)registerLibrary:(const luaL_Reg *)functions metaFunctions:(const luaL_Reg *)metaFunctions;
+
+/** Defines a Lua library that creates objects, which have methods
+ @code
+ char *libraryName = "shinyLibrary";
+ 
+ static const luaL_Reg myShinyLibrary[] = {
+ {"newObject", function_createObject},
+ {NULL, NULL} // Library arrays must always end with this
+ }
+ static const luaL_Reg myShinyMetaLibrary[] = {
+ {"__gc", function_doLibraryCleanup},
+ {NULL, NULL} // Library arrays must always end with this
+ }
+ static const luaL_Reg myShinyObjectLibrary[] = {
+ {"doThing"}, function_objectDoThing},
+ {"__gc"}, function_doObjectCleanup},
+ {NULL, NULL} // Library arrays must always end with this
+ }
+ [luaSkin registerLibraryWithObject:libraryName functions:myShinyLibrary metaFunctions:myShinyMetaLibrary libraryObjectFunctions:myShinyObjectLibrary];
+ @endcode
+
+ @note Every C function pointer must point to a function of the form: static int someFunction(lua_State *L);
+
+ @param functions - A static array of mappings between Lua function names and C function pointers. This provides the public API of the Lua library
+ @param metaFunctions - A static array of mappings between special meta Lua function names (such as "__gc") and C function pointers.
+ @param objectFunctions - A static array of mappings between Lua object method names and C function pointers. This provides the public API of objects created by this library. Note that this object is also used as the metatable, so special functions (e.g. "__gc") should be included here.
+ */
+- (void)registerLibraryWithObject:(char *)libraryName functions:(const luaL_Reg *)functions metaFunctions:(const luaL_Reg *)metaFunctions objectFunctions:(const luaL_Reg *)objectFunctions;
+
+//TODO: Add methods for enforcing Lua function arguments
+//TODO: Add methods for converting Lua<->objc types
 @end

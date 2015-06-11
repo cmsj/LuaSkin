@@ -87,4 +87,27 @@
     return YES;
 }
 
+#pragma mark - Methods for registering libraries with Lua
+
+- (void)registerLibrary:(const luaL_Reg *)functions metaFunctions:(const luaL_Reg *)metaFunctions {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconstant-conversion"
+    luaL_newlib(_L, functions);
+    luaL_newlib(_L, metaFunctions);
+#pragma GCC diagnostic pop
+    lua_setmetatable(_L, -2);
+}
+
+- (void)registerLibraryWithObject:(char *)libraryName functions:(const luaL_Reg *)functions metaFunctions:(const luaL_Reg *)metaFunctions objectFunctions:(const luaL_Reg *)objectFunctions {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconstant-conversion"
+    luaL_newlib(_L, objectFunctions);
+#pragma GCC diagnostic pop
+    lua_pushvalue(_L, -1);
+    lua_setfield(_L, -2, "__index");
+    lua_setfield(_L, LUA_REGISTRYINDEX, libraryName);
+    
+    [self registerLibrary:functions metaFunctions:metaFunctions];
+}
+
 @end
