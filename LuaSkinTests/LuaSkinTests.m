@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
+#import "Skin.h"
 
-@interface LuaSkinTests : XCTestCase
+@interface LuaSkinTests : XCTestCase {
+    Skin *skin;
+}
 
 @end
 
@@ -17,23 +20,34 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    skin = [[Skin alloc] init];
+    [skin createLuaState];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [skin destroyLuaState];
+    
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testSkinInit {
+    XCTAssertNotNil(skin);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
+- (void)testLuaStateCreation {
+    XCTAssert((skin.L != NULL));
+}
+
+- (void)testLuaStateDestruction {
+    [skin destroyLuaState];
+    XCTAssert((skin.L == NULL));
+}
+
+- (void)testPerformanceLuaStateLifecycle {
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        [skin destroyLuaState];
+        [skin createLuaState];
     }];
 }
 
