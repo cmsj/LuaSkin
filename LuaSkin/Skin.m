@@ -16,6 +16,15 @@
 
 #pragma mark - Class lifecycle
 
++ (id)shared {
+    static Skin *sharedLuaSkin = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedLuaSkin = [[self alloc] init];
+    });
+    return sharedLuaSkin;
+}
+
 - (id)init {
     self = [super init];
     if (self) {

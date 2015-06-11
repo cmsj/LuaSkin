@@ -17,11 +17,21 @@
 
 @property (atomic, readonly) lua_State *L;
 
+/** Returns the singleton LuaSkin.Skin object
+ @return Shared instance of LuaSkin.Skin
+ */
++ (id)shared;
+
+/** Prepares the Lua environment in the LuaSkin object
+ @note This must be called once after accessing the shared LuaSkin object for the first time
+ */
 - (void)createLuaState;
+
+/** Destroys the Lua environment in the LuaSkin object
+ */
 - (void)destroyLuaState;
 
 /** Calls lua_pcall() with debug.traceback() as the message handler
- 
  @code
  // First push a reference to the Lua function you want to call
  lua_rawgeti(L, LUA_REGISTRYINDEX, fnRef);

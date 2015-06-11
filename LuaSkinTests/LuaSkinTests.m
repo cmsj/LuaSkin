@@ -21,7 +21,7 @@
 - (void)setUp {
     [super setUp];
 
-    skin = [[Skin alloc] init];
+    skin = [Skin shared];
     [skin createLuaState];
 }
 
