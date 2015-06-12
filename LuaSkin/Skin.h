@@ -22,6 +22,12 @@
  */
 + (id)shared;
 
+/** Initialises a LuaSkin object
+ @note Typically you are unlikely to want to use the alloc/init pattern. Instead, see @link shared shared @/link for getting the singleton object. You should only call alloc/init directly if you need to manage multiple Lua environments
+ @return An initialised LuaSkin.Skin object
+ */
+- (id)init;
+
 /** Prepares the Lua environment in the LuaSkin object
  @note This method should only ever be called after an explicit call to destroyLuaState. The class initialisation creats a Lua environment.
  */
