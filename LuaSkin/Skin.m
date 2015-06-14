@@ -8,7 +8,7 @@
 
 #import "Skin.h"
 
-@implementation Skin
+@implementation LuaSkin
 
 #pragma mark - Skin Properties
 
@@ -17,7 +17,7 @@
 #pragma mark - Class lifecycle
 
 + (id)shared {
-    static Skin *sharedLuaSkin = nil;
+    static LuaSkin *sharedLuaSkin = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedLuaSkin = [[self alloc] init];
@@ -61,11 +61,12 @@
     lua_remove(_L, -2);
 
     // Move debug.traceback() to the bottom of the stack.
-    // The stack currently looks like this:
+    // The stack currently looks like this, for nargs == 3:
     //  -1 debug.traceback()
     //  -2 argN
     //  -3 argN - 1
-    //  -4 function
+    //  -4 argN - 2
+    //  -5 function
     //
     // The stack should look like this, for nargs == 3:
     //  -1 argN

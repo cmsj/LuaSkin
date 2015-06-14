@@ -100,7 +100,7 @@ static const luaL_Reg objectFunctions[] = {
 #pragma mark - Test case harness definition
 
 @interface LuaSkinTests : XCTestCase {
-    Skin *skin;
+    LuaSkin *skin;
 }
 
 @end
@@ -111,7 +111,7 @@ static const luaL_Reg objectFunctions[] = {
 
 - (void)setUp {
     [super setUp];
-    skin = [[Skin alloc] init];
+    skin = [[LuaSkin alloc] init];
     libraryGCCalled = NO;
     libraryObjectGCCalled = NO;
 }
@@ -126,7 +126,7 @@ static const luaL_Reg objectFunctions[] = {
 }
 
 - (void)testSingletonality {
-    XCTAssertEqual([Skin shared], [Skin shared]);
+    XCTAssertEqual([LuaSkin shared], [LuaSkin shared]);
 }
 
 - (void)testLuaStateCreation {

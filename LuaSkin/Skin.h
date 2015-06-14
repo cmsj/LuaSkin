@@ -11,7 +11,7 @@
 #import "lualib.h"
 #import "lua.h"
 
-@interface Skin : NSObject {
+@interface LuaSkin : NSObject {
     lua_State *_L;
 }
 
