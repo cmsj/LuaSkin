@@ -15,7 +15,11 @@
     lua_State *_L;
 }
 
+#pragma mark - Skin Properties
+
 @property (atomic, readonly) lua_State *L;
+
+#pragma mark - Class lifecycle
 
 /** Returns the singleton LuaSkin.Skin object
  @return Shared instance of LuaSkin.Skin
@@ -28,6 +32,8 @@
  */
 - (id)init;
 
+#pragma mark - lua_State lifecycle
+
 /** Prepares the Lua environment in the LuaSkin object
  @note This method should only ever be called after an explicit call to destroyLuaState. The class initialisation creats a Lua environment.
  */
@@ -36,6 +42,8 @@
 /** Destroys the Lua environment in the LuaSkin object
  */
 - (void)destroyLuaState;
+
+#pragma mark - Methods for calling into Lua from C
 
 /** Calls lua_pcall() with debug.traceback() as the message handler
  @code
@@ -59,6 +67,8 @@
  @param nresults An integer specifying how many return values the Lua function will push onto the stack
  */
 - (BOOL)protectedCallAndTraceback:(int)nargs nresults:(int)nresults;
+
+#pragma mark - Methods for registering libraries with Lua
 
 /** Defines a Lua library
  @code
