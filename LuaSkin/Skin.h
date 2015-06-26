@@ -118,6 +118,7 @@
  */
 - (void)registerLibraryWithObject:(char *)libraryName functions:(const luaL_Reg *)functions metaFunctions:(const luaL_Reg *)metaFunctions objectFunctions:(const luaL_Reg *)objectFunctions;
 
+//TODO: Figure out a generic way to create library objects
 //TODO: Add methods for enforcing Lua function arguments
 //TODO: Add methods for converting Lua<->objc types
 @end
